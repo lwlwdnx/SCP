@@ -10,6 +10,8 @@ public class CameraController : MonoBehaviour
     public float rotateSpeed_Mouse = 0.2f;
 
     private bool m_Mouse = false;
+    private float m_LastMousePosX = 0.0f;
+    private float m_LastMousePosY = 0.0f;
 
 
     // Use this for initialization
@@ -46,15 +48,29 @@ public class CameraController : MonoBehaviour
             if(m_Mouse==false)
             {
                 m_Mouse = true;
+                Vector3 kMousePos = Input.mousePosition;
+                m_LastMousePosX = kMousePos.x;
+                m_LastMousePosY = kMousePos.y;
             }
             else
             {
                 m_Mouse = false;
+                m_LastMousePosX = 0;
+                m_LastMousePosY = 0;
             }
         }
         if(m_Mouse == true)
         {
+            Vector3 kMousePos = Input.mousePosition;
+            float fDeltaX = m_LastMousePosX - kMousePos.x;
+            float fDeltaY = m_LastMousePosY - kMousePos.y;
+            m_LastMousePosX = kMousePos.x;
+            m_LastMousePosY = kMousePos.y;
 
+            Vector3 kNewEuler = transform.eulerAngles;
+            kNewEuler.x += fDeltaY * rotateSpeed_Mouse;
+            kNewEuler.y += -fDeltaX * rotateSpeed_Mouse;
+            transform.eulerAngles = kNewEuler;
         }
 
 
