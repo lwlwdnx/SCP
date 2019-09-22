@@ -226,8 +226,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 6
-  m_Range: 8
+  m_Intensity: 5
+  m_Range: 12
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -278,9 +278,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightDownRange: 3
   lightDownIntensity: 10
-  lightUpRange: 80
+  lightUpRange: 150
   lightUpIntensity: 2
-  lightDownRangeSpeed: 0.3
+  lightDownRangeSpeed: 0.8
   lightDownRangeLimit: 10
   flagLightUp: 0
 --- !u!1 &602935991
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemys:
-  - {fileID: 1032990479941864, guid: 5fff2674c41ee8f4bbfcbda1f9c3a509, type: 2}
+  - {fileID: 1033558192200726, guid: 05aaf17c1a1f4fb498961c6029d9391b, type: 2}
 --- !u!4 &1600235328
 Transform:
   m_ObjectHideFlags: 0
