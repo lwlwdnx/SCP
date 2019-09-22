@@ -787,6 +787,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemys:
   - {fileID: 1033558192200726, guid: 05aaf17c1a1f4fb498961c6029d9391b, type: 2}
+  battery: {fileID: 1560969185354934, guid: 9ea1315c426d63243b149efcc39eb73d, type: 2}
+  door: {fileID: 1571679987497618, guid: 0ba333af04ee40647a4c5221203992d5, type: 2}
+  blocks: {fileID: 1539631560002458, guid: 209921894c0caaf4e8b0ee773ad7b058, type: 2}
+  box: {fileID: 1751521979194910, guid: 9d6aade0bc1cf6d47b0106e3d4c08b22, type: 2}
 --- !u!4 &1600235328
 Transform:
   m_ObjectHideFlags: 0

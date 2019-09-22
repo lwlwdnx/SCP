@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     public float moveSpeed_Keyboard = 10.0f;
     public float rotateSpeed_Mouse = 0.2f;
 
-    private bool m_Mouse = true;
+    private bool m_Mouse = false;
     private float m_LastMousePosX = 0.0f;
     private float m_LastMousePosY = 0.0f;
 
