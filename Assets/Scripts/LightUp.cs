@@ -5,12 +5,12 @@ using UnityEngine;
 public class LightUp : MonoBehaviour
 {
 
-    public float lightDownRange = 3;
-    public float lightDownIntensity = 10;
-    public float lightUpRange = 40;
+    public float lightDownRange = 12;
+    public float lightDownIntensity = 5;
+    public float lightUpRange = 150;
     public float lightUpIntensity = 2;
 
-    public float lightDownRangeSpeed = 0.15f;
+    public float lightDownRangeSpeed = 0.8f;
     //public float lightDownIntensitySpeed = 0.01f;
     public float lightDownRangeLimit = 10;
 
