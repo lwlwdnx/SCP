@@ -20,7 +20,7 @@ public class Death : MonoBehaviour
 
         if (other.tag == "main camera")
         {
-
+            Debug.Log("111");
         }
     }
 
