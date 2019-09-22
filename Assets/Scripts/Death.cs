@@ -18,9 +18,10 @@ public class Death : MonoBehaviour
             return;
         }
 
-        if (other.tag == "main camera")
+        if (other.tag == "Enemy")
         {
-            Debug.Log("111");
+            //Debug.Log("111");
+            Time.timeScale = 0.01f;
         }
     }
 
