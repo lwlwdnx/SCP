@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     private EnemyState state;
     private float chase_speed = 10.0f;
     private float chase_thr = 0.6f;
+    private Vector3 pos = Vector3.zero;
 
     private Camera cam;
 
@@ -26,8 +27,14 @@ public class Enemy : MonoBehaviour
 
     public float speed
     {
-        set { enemy.speed = value;  }
-        get { return enemy.speed; }
+        set { chase_speed = value;  }
+        get { return chase_speed; }
+    }
+
+    public Vector3 position
+    {
+        set { pos = value; }
+        get { return pos; }
     }
 
 	// Use this for initialization
@@ -53,6 +60,8 @@ public class Enemy : MonoBehaviour
             default:
                 break;
         }
+
+        pos = transform.position;
 	}
 
     private void Chase()
