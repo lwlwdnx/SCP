@@ -35,17 +35,19 @@ public class SCPManager : MonoBehaviour
 	{
         if (lightUpScript.flagLightUp == true) 
         {
-            foreach (GameObject obj in enemy_list)
-            {
-                obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.CHASE;
-            }
+            ChangeEnemyMode(Enemy.EnemyState.CHASE);
         }
         else
         {
-            foreach (GameObject obj in enemy_list)
-            {
-                obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.PATROL;
-            }
+            ChangeEnemyMode(Enemy.EnemyState.PATROL);
+        }
+    }
+
+    private void ChangeEnemyMode(Enemy.EnemyState state)
+    {
+        foreach (GameObject obj in enemy_list)
+        {
+            obj.GetComponent<Enemy>().enemy_state = state;
         }
     }
 }

@@ -83,7 +83,6 @@ public class Enemy : MonoBehaviour
             enemy.speed = chase_speed;
             now_index = (now_index+1)%route[route_index].Length;
             enemy.destination = route[route_index][now_index];
-            Debug.Log(enemy.destination);
         }
         enemy.destination = route[route_index][now_index];
     }
