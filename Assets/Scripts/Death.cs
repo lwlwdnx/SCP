@@ -14,14 +14,14 @@ public class Death : MonoBehaviour
 		
 	}
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Boundary") 
+        if (collision.gameObject.tag == "Boundary") 
         {
             return;
         }
 
-        if (other.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             //Debug.Log("111");
             Time.timeScale = 0.01f;
