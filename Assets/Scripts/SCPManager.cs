@@ -5,6 +5,11 @@ using UnityEngine;
 public class SCPManager : MonoBehaviour
 {
     [SerializeField] GameObject[] enemys;
+    [SerializeField] GameObject battery;
+    [SerializeField] GameObject door;
+    [SerializeField] GameObject blocks;
+    [SerializeField] GameObject box;
+
     List<GameObject> enemy_list = new List<GameObject>();
 
     private LightUp lightUpScript;
