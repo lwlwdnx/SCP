@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed_Keyboard: 10
-  rotateSpeed_Mouse: 0.2
+  rotateSpeed_Mouse: 0.3
 --- !u!65 &1008258034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemys:
-  - {fileID: 1033558192200726, guid: 05aaf17c1a1f4fb498961c6029d9391b, type: 2}
+  - {fileID: 1237832484708588, guid: 439f800785c17464cb37616acc4bbf57, type: 2}
   battery: {fileID: 1560969185354934, guid: 9ea1315c426d63243b149efcc39eb73d, type: 2}
   door: {fileID: 1571679987497618, guid: 0ba333af04ee40647a4c5221203992d5, type: 2}
   blocks: {fileID: 1539631560002458, guid: 209921894c0caaf4e8b0ee773ad7b058, type: 2}
