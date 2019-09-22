@@ -276,8 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e27ced52e96ad4499dabf622e47018e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightDownRange: 3
-  lightDownIntensity: 10
+  lightDownRange: 12
+  lightDownIntensity: 5
   lightUpRange: 150
   lightUpIntensity: 2
   lightDownRangeSpeed: 0.8

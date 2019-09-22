@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
 
-	// Use this for initialization
-	void Start()
+    private bool restart = false;
+
+    // Use this for initialization
+    void Start()
 	{
 		
 	}
@@ -22,12 +25,21 @@ public class Death : MonoBehaviour
         {
             //Debug.Log("111");
             Time.timeScale = 0.01f;
+            restart = true;
         }
     }
 
     // Update is called once per frame
     void Update()
 	{
-		
-	}
+        if (restart == true)
+        {
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                Time.timeScale = 1;
+                restart = false;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+    }
 }
