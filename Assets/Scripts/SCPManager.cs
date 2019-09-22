@@ -24,7 +24,7 @@ public class SCPManager : MonoBehaviour
 
         foreach (GameObject obj in enemy_list)
         {
-            obj.GetComponent<Enemy>().position = new Vector3(10, 0, 0);
+            obj.GetComponent<Enemy>().position = new Vector3(20, 0, 0);
             obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.PATROL;
         }
         
@@ -34,6 +34,13 @@ public class SCPManager : MonoBehaviour
 	void Update()
 	{
         if (lightUpScript.flagLightUp == true) 
+        {
+            foreach (GameObject obj in enemy_list)
+            {
+                obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.CHASE;
+            }
+        }
+        else
         {
             foreach (GameObject obj in enemy_list)
             {
