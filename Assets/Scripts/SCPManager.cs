@@ -11,17 +11,18 @@ public class SCPManager : MonoBehaviour
     void Start()
 	{
 		enemy_list.Add(GameObject.Instantiate(enemys[0], transform.position, Quaternion.identity));
+        enemy_list.Add(GameObject.Instantiate(enemys[0], transform.position, Quaternion.identity));
 
         foreach (GameObject obj in enemy_list)
         {
             obj.GetComponent<Enemy>().position = new Vector3(10, 0, 0);
-            obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.CHASE;
+            obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.PATROL;
         }
+        enemy_list[1].GetComponent<Enemy>().enemy_state = Enemy.EnemyState.CHASE;
     }
 	
 	// Update is called once per frame
 	void Update()
 	{
-		
-	}
+    }
 }
