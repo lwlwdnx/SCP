@@ -34,7 +34,7 @@ public class SCPManager : MonoBehaviour
 
         foreach (GameObject obj in enemy_list)
         {
-            obj.GetComponent<Enemy>().position = new Vector3(20, 0, 0);
+            obj.GetComponent<Enemy>().position = new Vector3(0, 0, 0);
             obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.PATROL;
         }
         // Generate battery
