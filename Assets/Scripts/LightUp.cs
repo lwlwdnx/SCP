@@ -12,9 +12,12 @@ public class LightUp : MonoBehaviour
 
     public float lightDownRangeSpeed = 0.8f;
     //public float lightDownIntensitySpeed = 0.01f;
-    public float lightDownRangeLimit = 10;
+    public float lightDownRangeLimit = 30;
 
     public bool flagLightUp = false;
+
+    //public float lightUpCoolDown = 3.0f;
+    public bool lightCoolDown = true;
 
     IEnumerator LightDown()
     {
@@ -36,8 +39,9 @@ public class LightUp : MonoBehaviour
 	void Update()
 	{
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && lightCoolDown == true) 
         {
+            lightCoolDown = false;
             flagLightUp = true;
             GetComponent<Light>().range = lightUpRange;
             GetComponent<Light>().intensity = lightUpIntensity;
@@ -53,6 +57,7 @@ public class LightUp : MonoBehaviour
             GetComponent<Light>().intensity = lightDownIntensity;
 
             flagLightUp = false;
+            lightCoolDown = true;
         }
 
     }

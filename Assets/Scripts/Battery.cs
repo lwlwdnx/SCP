@@ -5,6 +5,11 @@ using UnityEngine;
 public class Battery : MonoBehaviour
 {
 
+    public bool batteryInRange = false;
+
+    public GameObject batteryLight;
+
+
 	// Use this for initialization
 	void Start()
 	{
