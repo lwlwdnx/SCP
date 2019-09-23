@@ -1154,7 +1154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4759808328945720, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1178322664623342, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_Name
@@ -2101,7 +2101,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4759808328945720, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4759808328945720, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
