@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
                 break;
         }
         pos = transform.position;
-
+        Debug.Log(state);
         Animation();
     }
 
@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
     private void Chase()
     {
         anim_state = EnemyAnim.WALK;
-        if ((transform.position - light_pos).magnitude > 0.6f) {
+        if ((transform.position - light_pos).magnitude > 5f) {
             enemy.speed = chase_speed;
             enemy.destination = light_pos;
         }
