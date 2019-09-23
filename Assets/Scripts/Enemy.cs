@@ -114,6 +114,7 @@ public class Enemy : MonoBehaviour
         }
         pos = transform.position;
         Animation();
+        Debug.Log(state);
     }
 
     private void InitRoute()
