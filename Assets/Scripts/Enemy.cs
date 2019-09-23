@@ -138,6 +138,7 @@ public class Enemy : MonoBehaviour
 
     private void Chase()
     {
+        enemy.isStopped = false;
         anim_state = EnemyAnim.CRAWL;
         if ((transform.position - light_pos).magnitude > 5f) {
             enemy.speed = chase_speed;
@@ -150,6 +151,7 @@ public class Enemy : MonoBehaviour
     }
     private void Patrol()
     {
+        enemy.isStopped = false;
         anim_state = EnemyAnim.WALK;
         enemy.speed = patrol_speed;
         if ((transform.position-route[patrol_pattern][now_index]).magnitude < 6f) {
@@ -161,6 +163,7 @@ public class Enemy : MonoBehaviour
 
     private void Stake()
     {
+        enemy.isStopped = false;
         anim_state = EnemyAnim.CRAWL;
         enemy.speed = stake_speed;
         enemy.destination = cam.transform.position;

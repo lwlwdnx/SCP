@@ -12,7 +12,9 @@ public class SCPManager : MonoBehaviour
 
     [SerializeField] List<GameObject> enemy_list = new List<GameObject>();
 
-    private BatteryManager batteryManagerScript;
+    public BatteryManager batteryManagerScript;
+
+    public bool battery_light_flag = false;
 
     // Use this for initialization
     void Start()
@@ -35,14 +37,17 @@ public class SCPManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+        battery_light_flag = batteryManagerScript.isLightUp;
+        /*
         if (batteryManagerScript.isLightUp == true) 
         {
             SetLightPosition(batteryManagerScript.nowTransform.position);
             AllChangeEnemyModeExceptStakeAndStun(Enemy.EnemyState.CHASE);
         }
+        */
     }
 
-    private void SetLightPosition(Vector3 pos)
+    public void SetLightPosition(Vector3 pos)
     {
         foreach (GameObject obj in enemy_list)
         {
@@ -73,5 +78,9 @@ public class SCPManager : MonoBehaviour
         {
             if (obj.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STAKE && obj.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STUN) ChangeEnemyMode(obj, state);
         }
+    }
+    public void ChangeEnemyMode(Enemy obj, Enemy.EnemyState state)
+    {
+        obj.enemy_state = state;
     }
 }
