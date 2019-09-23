@@ -12,7 +12,6 @@ public class CameraController : MonoBehaviour
     private float m_LastMousePosX = 0.0f;
     private float m_LastMousePosY = 0.0f;
 
-
     // Use this for initialization
     void Start()
 	{
