@@ -40,8 +40,6 @@ public class SCPManager : MonoBehaviour
         enemy_list[0].GetComponent<Enemy>().enemy_animation = Enemy.EnemyAnim.CRAWL;
         
         // Generate battery
-        //battery_list.Add(GameObject.Instantiate(battery, new Vector3(10, 30, 10), Quaternion.identity));
-        //door_list.Add(GameObject.Instantiate(door, new Vector3(20, 30, 10), Quaternion.identity));
         blocks_list.Add(GameObject.Instantiate(blocks, new Vector3(30, 30, 10), Quaternion.identity));
         box_list.Add(GameObject.Instantiate(box, new Vector3(-10, 30, 10), Quaternion.identity));
     }
