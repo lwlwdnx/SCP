@@ -84,6 +84,22 @@ public class CameraController : MonoBehaviour
             transform.eulerAngles = kNewEuler;
         }
 
+        Vector3 mouseRotation = gameObject.transform.eulerAngles;
+        if (mouseRotation.x <= 180.0f) 
+        {
+            if(mouseRotation.x > 60.0f)
+            {
+                mouseRotation.x = 60.0f;
+            }
+        }
+        if (mouseRotation.x >= 180.0f)
+        {
+            if(mouseRotation.x < 325.0f)
+            {
+                mouseRotation.x = 325.0f;
+            }
+        }
+        gameObject.transform.eulerAngles = mouseRotation;
 
     }
 }

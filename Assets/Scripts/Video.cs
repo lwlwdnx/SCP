@@ -6,7 +6,7 @@ using UnityEngine.Video;
 public class Video : MonoBehaviour
 {
 
-    //public VideoPlayer videoPlayer;
+    public VideoPlayer videoPlayer;
 
     private GameObject go;
 
@@ -31,6 +31,6 @@ public class Video : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-        
+        videoPlayer.loopPointReached += EndReached;
     }
 }

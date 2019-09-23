@@ -1154,7 +1154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4759808328945720, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1178322664623342, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_Name
@@ -1574,7 +1574,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4759808328945720, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1178322664623342, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_Name
@@ -2101,7 +2101,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4759808328945720, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4759808328945720, guid: 84a21bbac0e47df4297adf51fb4496c8, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -4116,7 +4116,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1493430013}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: bf7bbeecbc806824b966adf395b0b3a3, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 36d9dfc86cf17d84bae8a51773b005e7, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1008258031}
@@ -4125,7 +4125,7 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 1
-  m_AspectRatio: 2
+  m_AspectRatio: 0
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
@@ -4166,6 +4166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb5a2edc4138174a863d0a41396e81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1493430014}
 --- !u!1001 &1503651229
 Prefab:
   m_ObjectHideFlags: 0
