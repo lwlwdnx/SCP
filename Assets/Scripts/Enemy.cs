@@ -124,7 +124,7 @@ public class Enemy : MonoBehaviour
 
     private void Chase()
     {
-        anim_state = EnemyAnim.WALK;
+        anim_state = EnemyAnim.CRAWL;
         if ((transform.position - light_pos).magnitude > 0.6f) {
             enemy.speed = chase_speed;
             enemy.destination = light_pos;
@@ -136,7 +136,7 @@ public class Enemy : MonoBehaviour
     }
     private void Patrol()
     {
-        anim_state = EnemyAnim.WALK;
+        anim_state = EnemyAnim.CRAWL;
         if ((transform.position-route[patrol_pattern][now_index]).magnitude < 6f) {
             enemy.speed = chase_speed;
             now_index = (now_index+1)%route[patrol_pattern].Length;
