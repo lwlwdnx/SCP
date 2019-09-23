@@ -25,10 +25,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] NavMeshAgent enemy;
     [SerializeField] int patrol_pattern = 0;
     [SerializeField] float stake_limits_timer = 3.0f;
+    [SerializeField] float stake_speed  = 5.0f;
+    [SerializeField] float chase_speed  = 8.0f;
+    [SerializeField] float patrol_speed = 10.0f;
 
     private EnemyState state;
-    private float chase_speed = 10.0f;
-    private float chase_thr = 0.6f;
     private Vector3 pos = Vector3.zero;
 
     private EnemyAnim anim_state = EnemyAnim.WALK;
@@ -75,6 +76,9 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        enemy = gameObject.GetComponent<NavMeshAgent>();
+        enemy.destination = Vector3.zero;
+        enemy.speed = patrol_speed;
         anim_ctrl = GetComponent<Animator>();
         cam = Camera.main;
     }
@@ -83,9 +87,6 @@ public class Enemy : MonoBehaviour
     void Start()
 	{
         InitRoute();
-        enemy = gameObject.GetComponent<NavMeshAgent>();
-        enemy.destination = Vector3.zero;
-
 	}
 	
 	// Update is called once per frame
@@ -112,7 +113,6 @@ public class Enemy : MonoBehaviour
                 break;
         }
         pos = transform.position;
-
         Animation();
     }
 
@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
     private void Chase()
     {
         anim_state = EnemyAnim.WALK;
-        if ((transform.position - light_pos).magnitude > 0.6f) {
+        if ((transform.position - light_pos).magnitude > 5f) {
             enemy.speed = chase_speed;
             enemy.destination = light_pos;
         }
@@ -137,8 +137,8 @@ public class Enemy : MonoBehaviour
     private void Patrol()
     {
         anim_state = EnemyAnim.WALK;
+        enemy.speed = patrol_speed;
         if ((transform.position-route[patrol_pattern][now_index]).magnitude < 6f) {
-            enemy.speed = chase_speed;
             now_index = (now_index+1)%route[patrol_pattern].Length;
             enemy.destination = route[patrol_pattern][now_index];
         }
@@ -153,7 +153,7 @@ public class Enemy : MonoBehaviour
             stake_time -= Time.deltaTime;
             if (stake_time < 0.0f) { state = EnemyState.PATROL; }
         }
-        enemy.speed = chase_speed;
+        enemy.speed = stake_speed;
         enemy.destination = cam.transform.position;
     }
 

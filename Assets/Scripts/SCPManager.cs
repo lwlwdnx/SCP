@@ -10,12 +10,7 @@ public class SCPManager : MonoBehaviour
     [SerializeField] GameObject blocks;
     [SerializeField] GameObject box;
 
-    List<GameObject> enemy_list = new List<GameObject>();
-
-    List<GameObject> battery_list = new List<GameObject>();
-    List<GameObject> box_list = new List<GameObject>();
-    List<GameObject> blocks_list = new List<GameObject>();
-    List<GameObject> door_list = new List<GameObject>();
+    [SerializeField] List<GameObject> enemy_list = new List<GameObject>();
 
     private BatteryManager batteryManagerScript;
 
@@ -29,19 +24,11 @@ public class SCPManager : MonoBehaviour
             //Debug.Log("000");
         }
 
-        enemy_list.Add(GameObject.Instantiate(enemys[1], transform.position, Quaternion.identity));
-        enemy_list.Add(GameObject.Instantiate(enemys[1], transform.position, Quaternion.identity));
-
         foreach (GameObject obj in enemy_list)
         {
             obj.GetComponent<Enemy>().position = new Vector3(0, 0, 0);
             obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.PATROL;
         }
-        enemy_list[0].GetComponent<Enemy>().enemy_animation = Enemy.EnemyAnim.CRAWL;
-        
-        // Generate battery
-        blocks_list.Add(GameObject.Instantiate(blocks, new Vector3(30, 30, 10), Quaternion.identity));
-        box_list.Add(GameObject.Instantiate(box, new Vector3(-10, 30, 10), Quaternion.identity));
     }
 	
 	// Update is called once per frame

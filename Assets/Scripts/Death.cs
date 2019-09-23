@@ -8,13 +8,22 @@ public class Death : MonoBehaviour
 
     public bool showDeath = false;
 
-    private bool restart = false;
+    public bool restart = false;
+
+    private GameObject go;
+
+    private Video videoScript;
 
     // Use this for initialization
     void Start()
 	{
-		
-	}
+        go = GameObject.FindWithTag("Finish");
+        if (go != null)
+        {
+            videoScript = go.GetComponent<Video>();
+            go.SetActive(false);
+        }
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -25,9 +34,10 @@ public class Death : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
+            go.SetActive(true);
             Time.timeScale = 0.01f;
-            restart = true;
-            showDeath = true;
+            //restart = true;
+            //showDeath = true;
         }
     }
 
