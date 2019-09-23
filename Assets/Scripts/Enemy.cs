@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
     {
         IDLE,
         WALK,
-        CRAWL
+        CRAWL,
+        SCREAM
     };
 
     [SerializeField] NavMeshAgent enemy;
@@ -119,7 +120,6 @@ public class Enemy : MonoBehaviour
 
     private void Chase()
     {
-        anim_state = EnemyAnim.CRAWL;
         if ((transform.position - light_pos).magnitude > 0.6f) {
             enemy.speed = chase_speed;
             enemy.destination = light_pos;
@@ -185,6 +185,9 @@ public class Enemy : MonoBehaviour
                 break;
             case EnemyAnim.CRAWL:
                 anim_ctrl.SetInteger("State", (int)EnemyAnim.CRAWL);
+                break;
+            case EnemyAnim.SCREAM:
+                anim_ctrl.SetInteger("State", (int)EnemyAnim.SCREAM);
                 break;
             default:
                 break;
