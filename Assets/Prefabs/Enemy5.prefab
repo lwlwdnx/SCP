@@ -2879,8 +2879,8 @@ MonoBehaviour:
   patrol_pattern: 0
   stake_limits_timer: 3
   stake_speed: 5
-  chase_speed: 10
-  patrol_speed: 5
+  chase_speed: 8
+  patrol_speed: 10
 --- !u!136 &136259230506688928
 CapsuleCollider:
   m_ObjectHideFlags: 1
