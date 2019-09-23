@@ -16,7 +16,8 @@ public class Enemy : MonoBehaviour
     public enum EnemyAnim
     {
         IDLE,
-        WALK
+        WALK,
+        CRAWL
     };
 
     [SerializeField] NavMeshAgent enemy;
@@ -28,7 +29,7 @@ public class Enemy : MonoBehaviour
     private float chase_thr = 0.6f;
     private Vector3 pos = Vector3.zero;
 
-    private EnemyAnim animation = EnemyAnim.IDLE;
+    private EnemyAnim anim_state = EnemyAnim.WALK;
     private Animator anim_ctrl;
 
     private List<Vector3[]> route = new List<Vector3[]>();
@@ -49,8 +50,8 @@ public class Enemy : MonoBehaviour
 
     public EnemyAnim enemy_animation
     {
-        set { this.animation = value; }
-        get { return this.animation; }
+        set { this.anim_state = value; }
+        get { return this.anim_state; }
     }
 
     public float speed
@@ -106,8 +107,8 @@ public class Enemy : MonoBehaviour
                 break;
         }
         pos = transform.position;
-
-        //Animation();
+        Debug.Log(anim_state);
+        Animation();
     }
 
     private void InitRoute()
@@ -118,6 +119,7 @@ public class Enemy : MonoBehaviour
 
     private void Chase()
     {
+        anim_state = EnemyAnim.CRAWL;
         if ((transform.position - light_pos).magnitude > 0.6f) {
             enemy.speed = chase_speed;
             enemy.destination = light_pos;
@@ -173,13 +175,16 @@ public class Enemy : MonoBehaviour
 
     private void Animation()
     {
-        switch (animation)
+        switch (anim_state)
         {
             case EnemyAnim.IDLE:
-                anim_ctrl.SetInteger("State",(int)EnemyAnim.IDLE);
+                anim_ctrl.SetInteger("State", (int)EnemyAnim.IDLE);
                 break;
             case EnemyAnim.WALK:
                 anim_ctrl.SetInteger("State", (int)EnemyAnim.WALK);
+                break;
+            case EnemyAnim.CRAWL:
+                anim_ctrl.SetInteger("State", (int)EnemyAnim.CRAWL);
                 break;
             default:
                 break;

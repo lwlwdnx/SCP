@@ -29,8 +29,8 @@ public class SCPManager : MonoBehaviour
             //Debug.Log("000");
         }
 
-        enemy_list.Add(GameObject.Instantiate(enemys[0], transform.position, Quaternion.identity));
-        //enemy_list.Add(GameObject.Instantiate(enemys[0], transform.position, Quaternion.identity));
+        enemy_list.Add(GameObject.Instantiate(enemys[1], transform.position, Quaternion.identity));
+        enemy_list.Add(GameObject.Instantiate(enemys[1], transform.position, Quaternion.identity));
 
         foreach (GameObject obj in enemy_list)
         {
