@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Death : MonoBehaviour
 {
 
+    public bool showDeath = false;
+
     private bool restart = false;
 
     // Use this for initialization
@@ -23,9 +25,9 @@ public class Death : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            //Debug.Log("111");
             Time.timeScale = 0.01f;
             restart = true;
+            showDeath = true;
         }
     }
 
@@ -38,6 +40,7 @@ public class Death : MonoBehaviour
             {
                 Time.timeScale = 1;
                 restart = false;
+                showDeath = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Victory : MonoBehaviour
 {
 
+    public bool showClear = false;
+
     private bool restart = false;
 
     // Use this for initialization
@@ -20,6 +22,7 @@ public class Victory : MonoBehaviour
         {
             Time.timeScale = 0.01f;
             restart = true;
+            showClear = true;
         }
     }
 
@@ -33,6 +36,7 @@ public class Victory : MonoBehaviour
             {
                 Time.timeScale = 1;
                 restart = false;
+                showClear = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
