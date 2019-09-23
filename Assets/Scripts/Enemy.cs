@@ -74,6 +74,12 @@ public class Enemy : MonoBehaviour
         set { light_pos = value; }
     }
 
+    public int patrol_pattern_
+    {
+        set { patrol_pattern = value; }
+        get { return patrol_pattern; }
+    }
+
     private void Awake()
     {
         enemy = gameObject.GetComponent<NavMeshAgent>();
@@ -119,8 +125,13 @@ public class Enemy : MonoBehaviour
 
     private void InitRoute()
     {
-        route.Add(new Vector3[4] { new Vector3(40f,0f,40f), new Vector3(40f, 0f, -40f), new Vector3(-40f, 0f, -40f), new Vector3(-40f, 0f, 40f) });
-        route.Add(new Vector3[4] { new Vector3(20f, 0f, 20f), new Vector3(20f, 0f, -20f), new Vector3(-20f, 0f, -20f), new Vector3(-20f, 0f, 20f) });
+        route.Add(new Vector3[2] { new Vector3(2f, 0f, 42f), new Vector3(42f, 0f, 42f) });
+        route.Add(new Vector3[4] { new Vector3(2f, 0f, -15f), new Vector3(33f, 0f, -15f), new Vector3(33f, 0f, 20f), new Vector3(2f, 0f, 20f) });
+        route.Add(new Vector3[4] { new Vector3(33f, 0f, 20f), new Vector3(2f, 0f, 20f), new Vector3(2f, 0f, -15f), new Vector3(33f, 0f, -15f) });
+        route.Add(new Vector3[4] { new Vector3(-44f, 0f, 8f), new Vector3(-19f, 0f, 8f), new Vector3(-19f, 0f, 30f), new Vector3(-44f, 0f, 30f) });
+        route.Add(new Vector3[2] { new Vector3(-14f, 0f, -30f), new Vector3(-14f, 0f, -7.5f) });
+        route.Add(new Vector3[2] { new Vector3(-33f, 0f, -40f), new Vector3(-33f, 0f, -3f) });
+        route.Add(new Vector3[2] { new Vector3(-40f, 0f, 40f), new Vector3(-6f, 0f, 40f) });
     }
 
     private void Chase()

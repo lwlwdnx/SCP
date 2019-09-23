@@ -23,11 +23,12 @@ public class SCPManager : MonoBehaviour
             batteryManagerScript = go.GetComponent<BatteryManager>();
             //Debug.Log("000");
         }
-        // 0,1,5: BUG
+        int route_index = 0;
         foreach (GameObject obj in enemy_list)
         {
             obj.GetComponent<Enemy>().position = new Vector3(0, 0, 0);
             obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.PATROL;
+            obj.GetComponent<Enemy>().patrol_pattern_ = route_index++;
         }
     }
 	
