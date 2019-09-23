@@ -2881,6 +2881,8 @@ MonoBehaviour:
   stake_speed: 5
   chase_speed: 8
   patrol_speed: 10
+  stun_timer: 1
+  stun_time: 0
 --- !u!136 &136259230506688928
 CapsuleCollider:
   m_ObjectHideFlags: 1

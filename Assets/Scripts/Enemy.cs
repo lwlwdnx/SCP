@@ -121,7 +121,6 @@ public class Enemy : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log(state);
         pos = transform.position;
         Animation();
     }
