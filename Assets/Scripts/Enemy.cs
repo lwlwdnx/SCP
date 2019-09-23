@@ -30,7 +30,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] float patrol_speed = 10.0f;
 
     private EnemyState state;
-    private float chase_thr = 0.6f;
     private Vector3 pos = Vector3.zero;
 
     private EnemyAnim anim_state = EnemyAnim.WALK;
@@ -115,6 +114,7 @@ public class Enemy : MonoBehaviour
         }
         pos = transform.position;
         Animation();
+        Debug.Log(state);
     }
 
     private void InitRoute()

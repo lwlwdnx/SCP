@@ -12,9 +12,6 @@ public class SCPManager : MonoBehaviour
 
     [SerializeField] List<GameObject> enemy_list = new List<GameObject>();
 
-    List<GameObject> box_list = new List<GameObject>();
-    List<GameObject> blocks_list = new List<GameObject>();
-
     private BatteryManager batteryManagerScript;
 
     // Use this for initialization
@@ -26,7 +23,7 @@ public class SCPManager : MonoBehaviour
             batteryManagerScript = go.GetComponent<BatteryManager>();
             //Debug.Log("000");
         }
-
+        // 0,1,5: BUG
         foreach (GameObject obj in enemy_list)
         {
             obj.GetComponent<Enemy>().position = new Vector3(0, 0, 0);
