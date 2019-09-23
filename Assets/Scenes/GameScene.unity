@@ -587,7 +587,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 280715722}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2625,6 +2625,7 @@ GameObject:
   - component: {fileID: 1008258034}
   - component: {fileID: 1008258036}
   - component: {fileID: 1008258035}
+  - component: {fileID: 1008258037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2749,6 +2750,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &1008258037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008258028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 5aedabfcbc7d329458e4e38d15dbe9ae, type: 2}
 --- !u!1 &1020581395 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1888544913957080, guid: 9ea1315c426d63243b149efcc39eb73d,
