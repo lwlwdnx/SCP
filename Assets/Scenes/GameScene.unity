@@ -4472,6 +4472,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1588461645}
   - component: {fileID: 1588461646}
+  - component: {fileID: 1588461647}
+  - component: {fileID: 1588461648}
   m_Layer: 10
   m_Name: LightRange
   m_TagString: Untagged
@@ -4504,6 +4506,38 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1588461647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588461644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967194deeca60d748af2af18c2c92d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1588461648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588461644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a73b77ce9ee0c4d8d14a3b1bcc0d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battery_list:
+  - {fileID: 1143884640}
+  - {fileID: 609743985}
+  - {fileID: 1314395221}
+  - {fileID: 800790993}
+  - {fileID: 1055459716}
+  - {fileID: 1020581395}
+  - {fileID: 1134139075}
+  - {fileID: 174273558}
+  - {fileID: 24195345}
 --- !u!1 &1600235326
 GameObject:
   m_ObjectHideFlags: 0
