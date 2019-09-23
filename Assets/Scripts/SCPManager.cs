@@ -12,10 +12,8 @@ public class SCPManager : MonoBehaviour
 
     List<GameObject> enemy_list = new List<GameObject>();
 
-    List<GameObject> battery_list = new List<GameObject>();
     List<GameObject> box_list = new List<GameObject>();
     List<GameObject> blocks_list = new List<GameObject>();
-    List<GameObject> door_list = new List<GameObject>();
 
     private BatteryManager batteryManagerScript;
 
@@ -39,8 +37,6 @@ public class SCPManager : MonoBehaviour
         }
         
         // Generate battery
-        //battery_list.Add(GameObject.Instantiate(battery, new Vector3(10, 30, 10), Quaternion.identity));
-        //door_list.Add(GameObject.Instantiate(door, new Vector3(20, 30, 10), Quaternion.identity));
         blocks_list.Add(GameObject.Instantiate(blocks, new Vector3(30, 30, 10), Quaternion.identity));
         box_list.Add(GameObject.Instantiate(box, new Vector3(-10, 30, 10), Quaternion.identity));
     }
