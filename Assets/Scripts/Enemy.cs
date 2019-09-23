@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] NavMeshAgent enemy;
     [SerializeField] int patrol_pattern = 0;
+    [SerializeField] float stake_limits_timer = 3.0f;
+
     private EnemyState state;
     private float chase_speed = 10.0f;
     private float chase_thr = 0.6f;
@@ -24,6 +26,9 @@ public class Enemy : MonoBehaviour
     private int now_index = 0;
 
     private Vector3 light_pos = Vector3.zero;
+
+    private bool isStake = false;
+    private float stake_time = 0.0f;
 
     private Camera cam;
 
@@ -86,7 +91,7 @@ public class Enemy : MonoBehaviour
         }
         pos = transform.position;
         Debug.Log(state);
-	}
+    }
 
     private void InitRoute()
     {
@@ -117,6 +122,11 @@ public class Enemy : MonoBehaviour
 
     private void Stake()
     {
+        if (!isStake)
+        {
+            stake_time -= Time.deltaTime;
+            if (stake_time < 0.0f) { state = EnemyState.PATROL; }
+        }
         enemy.speed = chase_speed;
         enemy.destination = cam.transform.position;
     }
@@ -126,18 +136,21 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider col)
-    {
-        if (col.tag == "MainCamera")
-        {
-            state = EnemyState.STAKE;
-        }
-    }
     private void OnTriggerExit(Collider other)
     {
         if(state == EnemyState.STAKE)
         {
-            state = EnemyState.PATROL;
+            isStake = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "MainCamera")
+        {
+            isStake = true;
+            stake_time = stake_limits_timer;
+            state = EnemyState.STAKE;
         }
     }
 }
