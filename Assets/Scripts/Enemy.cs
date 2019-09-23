@@ -13,6 +13,12 @@ public class Enemy : MonoBehaviour
         STUN
     };
 
+    public enum EnemyAnim
+    {
+        IDLE,
+        WALK
+    };
+
     [SerializeField] NavMeshAgent enemy;
     [SerializeField] int patrol_pattern = 0;
     [SerializeField] float stake_limits_timer = 3.0f;
@@ -21,6 +27,9 @@ public class Enemy : MonoBehaviour
     private float chase_speed = 10.0f;
     private float chase_thr = 0.6f;
     private Vector3 pos = Vector3.zero;
+
+    private EnemyAnim animation = EnemyAnim.IDLE;
+    private Animator anim_ctrl;
 
     private List<Vector3[]> route = new List<Vector3[]>();
     private int now_index = 0;
@@ -36,6 +45,12 @@ public class Enemy : MonoBehaviour
     {
         set { state = value; }
         get { return this.state; }
+    }
+
+    public EnemyAnim enemy_animation
+    {
+        set { this.animation = value; }
+        get { return this.animation; }
     }
 
     public float speed
@@ -57,6 +72,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        anim_ctrl = GetComponent<Animator>();
         cam = Camera.main;
     }
 
@@ -90,7 +106,8 @@ public class Enemy : MonoBehaviour
                 break;
         }
         pos = transform.position;
-        Debug.Log(state);
+
+        //Animation();
     }
 
     private void InitRoute()
@@ -151,6 +168,21 @@ public class Enemy : MonoBehaviour
             isStake = true;
             stake_time = stake_limits_timer;
             state = EnemyState.STAKE;
+        }
+    }
+
+    private void Animation()
+    {
+        switch (animation)
+        {
+            case EnemyAnim.IDLE:
+                anim_ctrl.SetInteger("State",(int)EnemyAnim.IDLE);
+                break;
+            case EnemyAnim.WALK:
+                anim_ctrl.SetInteger("State", (int)EnemyAnim.WALK);
+                break;
+            default:
+                break;
         }
     }
 }
