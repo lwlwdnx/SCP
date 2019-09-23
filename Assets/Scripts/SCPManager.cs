@@ -17,15 +17,15 @@ public class SCPManager : MonoBehaviour
     List<GameObject> blocks_list = new List<GameObject>();
     List<GameObject> door_list = new List<GameObject>();
 
-    private LightUp lightUpScript;
+    private BatteryManager batteryManagerScript;
 
     // Use this for initialization
     void Start()
 	{
-        GameObject go = GameObject.FindWithTag("LightUp");
+        GameObject go = GameObject.FindWithTag("BatteryManager");
         if (go != null) 
         {
-            lightUpScript = go.GetComponent<LightUp>();
+            batteryManagerScript = go.GetComponent<BatteryManager>();
             //Debug.Log("000");
         }
 
@@ -40,8 +40,8 @@ public class SCPManager : MonoBehaviour
         enemy_list[0].GetComponent<Enemy>().enemy_animation = Enemy.EnemyAnim.CRAWL;
         
         // Generate battery
-        battery_list.Add(GameObject.Instantiate(battery, new Vector3(10, 30, 10), Quaternion.identity));
-        door_list.Add(GameObject.Instantiate(door, new Vector3(20, 30, 10), Quaternion.identity));
+        //battery_list.Add(GameObject.Instantiate(battery, new Vector3(10, 30, 10), Quaternion.identity));
+        //door_list.Add(GameObject.Instantiate(door, new Vector3(20, 30, 10), Quaternion.identity));
         blocks_list.Add(GameObject.Instantiate(blocks, new Vector3(30, 30, 10), Quaternion.identity));
         box_list.Add(GameObject.Instantiate(box, new Vector3(-10, 30, 10), Quaternion.identity));
     }
@@ -49,9 +49,9 @@ public class SCPManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-        if (lightUpScript.flagLightUp == true) 
+        if (batteryManagerScript.isLightUp == true) 
         {
-            SetLightPosition(battery_list[0].transform.position);
+            SetLightPosition(batteryManagerScript.nowTransform.position);
             AllChangeEnemyModeExceptStake(Enemy.EnemyState.CHASE);
         }
     }
