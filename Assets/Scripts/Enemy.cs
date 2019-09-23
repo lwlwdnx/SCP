@@ -124,6 +124,7 @@ public class Enemy : MonoBehaviour
 
     private void Chase()
     {
+        anim_state = EnemyAnim.WALK;
         if ((transform.position - light_pos).magnitude > 0.6f) {
             enemy.speed = chase_speed;
             enemy.destination = light_pos;
@@ -135,6 +136,7 @@ public class Enemy : MonoBehaviour
     }
     private void Patrol()
     {
+        anim_state = EnemyAnim.WALK;
         if ((transform.position-route[patrol_pattern][now_index]).magnitude < 6f) {
             enemy.speed = chase_speed;
             now_index = (now_index+1)%route[patrol_pattern].Length;
@@ -145,6 +147,7 @@ public class Enemy : MonoBehaviour
 
     private void Stake()
     {
+        anim_state = EnemyAnim.CRAWL;
         if (!isStake)
         {
             stake_time -= Time.deltaTime;
@@ -161,7 +164,8 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-
+        enemy.isStopped = true;
+        anim_state = EnemyAnim.SCREAM;
     }
 
     private void OnTriggerExit(Collider other)
