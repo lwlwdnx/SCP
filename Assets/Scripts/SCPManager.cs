@@ -38,7 +38,7 @@ public class SCPManager : MonoBehaviour
         if (batteryManagerScript.isLightUp == true) 
         {
             SetLightPosition(batteryManagerScript.nowTransform.position);
-            AllChangeEnemyModeExceptStake(Enemy.EnemyState.CHASE);
+            AllChangeEnemyModeExceptStakeAndStun(Enemy.EnemyState.CHASE);
         }
     }
 
@@ -65,6 +65,13 @@ public class SCPManager : MonoBehaviour
         foreach (GameObject obj in enemy_list)
         {
             if (obj.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STAKE) ChangeEnemyMode(obj,state);
+        }
+    }
+    private void AllChangeEnemyModeExceptStakeAndStun(Enemy.EnemyState state)
+    {
+        foreach (GameObject obj in enemy_list)
+        {
+            if (obj.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STAKE && obj.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STUN) ChangeEnemyMode(obj, state);
         }
     }
 }

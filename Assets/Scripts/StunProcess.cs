@@ -15,10 +15,13 @@ public class StunProcess : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other);
         foreach (GameObject obj in battery_list)
         {
-            
+            if (other.tag == "Enemy" && obj.GetComponent<Battery>().LightJudge && other.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STUN)
+            {
+                other.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.STUN;
+                other.GetComponent<Enemy>().stun_time = other.GetComponent<Enemy>().stun_timer;
+            }
         }
     }
 }

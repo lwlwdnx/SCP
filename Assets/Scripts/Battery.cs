@@ -23,6 +23,8 @@ public class Battery : MonoBehaviour
     //public float lightUpCoolDown = 3.0f;
     public bool lightCoolDown = true;
 
+    public bool LightJudge = false;
+
     IEnumerator LightDown()
     {
         while (true)
@@ -67,6 +69,8 @@ public class Battery : MonoBehaviour
             GetComponent<Light>().intensity = lightUpIntensity;
 
             StartCoroutine("LightDown");
+
+            LightJudge = true;
         }
 
         if (GetComponent<Light>().range < lightDownRangeLimit)
@@ -78,6 +82,8 @@ public class Battery : MonoBehaviour
 
             flagLightUp = false;
             lightCoolDown = true;
+
+            LightJudge = false;
         }
 
     }

@@ -45,6 +45,9 @@ public class Enemy : MonoBehaviour
 
     private Camera cam;
 
+    public float stun_timer = 1.0f;
+    public float stun_time = 0.0f;
+
     public EnemyState enemy_state
     {
         set { state = value; }
@@ -118,6 +121,7 @@ public class Enemy : MonoBehaviour
             default:
                 break;
         }
+        Debug.Log(state);
         pos = transform.position;
         Animation();
     }
@@ -159,18 +163,22 @@ public class Enemy : MonoBehaviour
     private void Stake()
     {
         anim_state = EnemyAnim.CRAWL;
+        enemy.speed = stake_speed;
+        enemy.destination = cam.transform.position;
         if (!isStake)
         {
             stake_time -= Time.deltaTime;
-            if (stake_time < 0.0f) { state = EnemyState.PATROL; }
+            if (stake_time < 0.0f) { state = EnemyState.PATROL; Patrol(); }
         }
-        enemy.speed = stake_speed;
-        enemy.destination = cam.transform.position;
     }
 
     private void Stun()
     {
-
+        isStake = false;
+        enemy.isStopped = true;
+        anim_state = EnemyAnim.IDLE;
+        stun_time -= Time.deltaTime;
+        if (stun_time < 0.0f) { state = EnemyState.PATROL; enemy.isStopped = false; }
     }
 
     private void Attack()
