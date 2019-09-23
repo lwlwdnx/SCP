@@ -13,12 +13,12 @@ public class StunProcess : MonoBehaviour
 		
 	}
 
-    void Update()
-    {
-    }
-
     private void OnTriggerStay(Collider other)
     {
-
+        Debug.Log(other);
+        foreach (GameObject obj in battery_list)
+        {
+            
+        }
     }
 }
