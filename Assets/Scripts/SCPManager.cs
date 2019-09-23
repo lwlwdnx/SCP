@@ -37,6 +37,8 @@ public class SCPManager : MonoBehaviour
             obj.GetComponent<Enemy>().position = new Vector3(0, 0, 0);
             obj.GetComponent<Enemy>().enemy_state = Enemy.EnemyState.PATROL;
         }
+        enemy_list[0].GetComponent<Enemy>().enemy_animation = Enemy.EnemyAnim.CRAWL;
+        
         // Generate battery
         battery_list.Add(GameObject.Instantiate(battery, new Vector3(10, 30, 10), Quaternion.identity));
         door_list.Add(GameObject.Instantiate(door, new Vector3(20, 30, 10), Quaternion.identity));

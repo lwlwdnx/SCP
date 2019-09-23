@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
         PATROL,
         CHASE,
         STAKE,
-        STUN
+        STUN,
+        ATTACK
     };
 
     public enum EnemyAnim
@@ -104,11 +105,14 @@ public class Enemy : MonoBehaviour
             case EnemyState.STUN:
                 Stun();
                 break;
+            case EnemyState.ATTACK:
+                Attack();
+                break;
             default:
                 break;
         }
         pos = transform.position;
-        Debug.Log(anim_state);
+
         Animation();
     }
 
@@ -151,6 +155,11 @@ public class Enemy : MonoBehaviour
     }
 
     private void Stun()
+    {
+
+    }
+
+    private void Attack()
     {
 
     }
