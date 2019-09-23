@@ -85,6 +85,7 @@ public class Enemy : MonoBehaviour
                 break;
         }
         pos = transform.position;
+        Debug.Log(state);
 	}
 
     private void InitRoute()
@@ -95,8 +96,14 @@ public class Enemy : MonoBehaviour
 
     private void Chase()
     {
-       enemy.speed = chase_speed;
-       enemy.destination = light_pos;
+        if ((transform.position - light_pos).magnitude > 0.6f) {
+            enemy.speed = chase_speed;
+            enemy.destination = light_pos;
+        }
+        else
+        {
+            if(state != EnemyState.STAKE) state = EnemyState.PATROL;
+        }
     }
     private void Patrol()
     {

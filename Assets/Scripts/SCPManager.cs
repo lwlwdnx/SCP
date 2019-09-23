@@ -50,15 +50,7 @@ public class SCPManager : MonoBehaviour
         if (lightUpScript.flagLightUp == true) 
         {
             SetLightPosition(battery_list[0].transform.position);
-            AllChangeEnemyMode(Enemy.EnemyState.CHASE);
-        }
-        else
-        {
-            foreach (GameObject obj in enemy_list)
-            {
-                if (obj.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STAKE)
-                { ChangeEnemyMode(obj, Enemy.EnemyState.PATROL); }
-            }
+            AllChangeEnemyModeExceptStake(Enemy.EnemyState.CHASE);
         }
     }
 
@@ -79,5 +71,12 @@ public class SCPManager : MonoBehaviour
     private void ChangeEnemyMode(GameObject obj, Enemy.EnemyState state)
     {
         obj.GetComponent<Enemy>().enemy_state = state;
+    }
+    private void AllChangeEnemyModeExceptStake(Enemy.EnemyState state)
+    {
+        foreach (GameObject obj in enemy_list)
+        {
+            if (obj.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STAKE) ChangeEnemyMode(obj,state);
+        }
     }
 }
