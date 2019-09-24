@@ -17,7 +17,7 @@ public class SearchRange : MonoBehaviour {
     {
         if (other.tag == "Enemy")
         {
-            if (manage.GetComponent<SCPManager>().battery_light_flag)
+            if (manage.GetComponent<SCPManager>().battery_light_flag && other.GetComponent<Enemy>().enemy_state != Enemy.EnemyState.STUN)
             {
                 manage.GetComponent<SCPManager>().SetLightPosition(manage.GetComponent<SCPManager>().batteryManagerScript.nowTransform.position);
                 manage.GetComponent<SCPManager>().ChangeEnemyMode(other.GetComponent<Enemy>(),Enemy.EnemyState.CHASE);
