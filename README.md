@@ -22,6 +22,9 @@ BirdMenに襲われないように, ゴールを目指そう!
 プログラマ (2人)  
  - ゲーム実装
 
+## Screen Shot  
+![Title](https://raw.github.com/lambda1/blob/master/SCP/Assets/Image/Title.png)
+
 ## Demo
 
 ## Development Environment  
@@ -46,8 +49,8 @@ OS: Windows 10, mac OS
 デザイナー  
   
 プログラマ  
-[lwlwdnx] (https://github.com/lwlwdnx/)  
-[lambda1] (https://github.com/lambda1/)  
+[lwlwdnx](https://github.com/lwlwdnx/)  
+[lambda1](https://github.com/lambda1/)  
 
 ## Author
 [lambda1](https://github.com/lambda1)
