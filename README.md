@@ -1,7 +1,7 @@
 Bird Men
 ====
 謎の生命体「Bird Men」とはいったい何なのか...  
-探索型ホラーゲーム  
+探索型ホラーゲーム.  
 
 ## Description
 SCPを題材にしたホラーゲームです.  
@@ -42,7 +42,7 @@ OS: Windows 10, mac OS
   
 ダウンロード  
 「Clone or download」をクリック  
-
+  
 ## Licence
 
 ## Member Info  
