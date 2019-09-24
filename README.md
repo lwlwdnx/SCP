@@ -31,10 +31,14 @@ BirdMenに襲われないように, ゴールを目指そう!
 
 ## Development Environment  
 OS: Windows 10, mac OS  
+  
+1. デザイナー  
+グラフィック:  
+  
+2. プログラマ  
 エンジン: Unity 2017.4.24f1 Personal  
 エディタ: Visual Studio 2017  
 管理ツール: Git  
-グラフィック:  
 
 ## Install  
 コマンド  
