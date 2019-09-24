@@ -12,20 +12,20 @@ BirdMenに襲われないように, ゴールを目指そう!
 
 ## Member  
 チーム名: SCP財団  
-プランナー(1人)  
+プランナー (1人)  
  - ゲーム企画, タスク管理, レベルデザイン, BGM実装など  
   
-デザイナー(2人)  
+デザイナー (2人)  
  - BirdMenのモデル・アニメーション, ゲームオブジェクトモデリング  
- - ポストプロセッシング実装, 風景モデリング, シェーダー, 各種素材作成など  
+ - ポストプロセッシング実装, 風景モデリング, シェーダー, 各種モデリングなど  
   
-プログラマ(2人)  
+プログラマ (2人)  
  - ゲーム実装
 
 ## Demo
 
 ## Development Environment  
-OS: Windows 10  
+OS: Windows 10, mac OS  
 エンジン: Unity 2017.4.24f1 Personal  
 エディタ: Visual Studio 2017  
 管理ツール: Git  
@@ -33,7 +33,7 @@ OS: Windows 10
 
 ## Install  
 コマンド  
-$ git clone https://github.com/Lambda1/SCP.git  
+`$ git clone https://github.com/Lambda1/SCP.git`  
   
 ダウンロード  
 「Clone or download」をクリック  
