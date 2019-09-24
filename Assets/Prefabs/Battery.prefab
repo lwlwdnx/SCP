@@ -198,6 +198,7 @@ MonoBehaviour:
   lightDownRangeLimit: 30
   flagLightUp: 0
   lightCoolDown: 1
+  LightJudge: 0
 --- !u!135 &135320669454066894
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -208,5 +209,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.43
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}

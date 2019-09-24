@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - LightUp
   - BatteryManager
+  - BatterySound
   layers:
   - Default
   - TransparentFX
