@@ -12,11 +12,20 @@ public class CameraController : MonoBehaviour
     private float m_LastMousePosX = 0.0f;
     private float m_LastMousePosY = 0.0f;
 
+    private UIController uicontrollerScript;
+
+    public GameObject uicontroller;
+
+    private bool once = true;
+
     // Use this for initialization
     void Start()
 	{
-		
-	}
+        if (uicontroller != null)
+        {
+            uicontrollerScript = uicontroller.GetComponent<UIController>();
+        }
+    }
 	
 	// Update is called once per frame
 	void Update()
@@ -51,7 +60,7 @@ public class CameraController : MonoBehaviour
             transform.position = kNewPos;
         }
 
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKey(KeyCode.Return))
         {
             if(m_Mouse==false)
             {
@@ -59,6 +68,11 @@ public class CameraController : MonoBehaviour
                 Vector3 kMousePos = Input.mousePosition;
                 m_LastMousePosX = kMousePos.x;
                 m_LastMousePosY = kMousePos.y;
+            }
+            if (once == true)
+            {
+                once = false;
+                uicontrollerScript.started = true;
             }
         }
         if(Input.GetKey(KeyCode.Escape))

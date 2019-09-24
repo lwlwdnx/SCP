@@ -15,9 +15,15 @@ public class UIController : MonoBehaviour
 
     public GameObject restartText;
 
+    public GameObject imageStart;
+
+    public GameObject startText;
+
     private Victory victoryScript;
 
     private Death deathScript;
+
+    public bool started = false;
 
     // Use this for initialization
     void Start()
@@ -67,5 +73,12 @@ public class UIController : MonoBehaviour
         {
             restartText.SetActive(false);
         }
+
+        if(started == true)
+        {
+            imageStart.SetActive(false);
+            startText.SetActive(false);
+        }
+
     }
 }
