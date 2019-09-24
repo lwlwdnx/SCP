@@ -23,7 +23,11 @@ BirdMenに襲われないように, ゴールを目指そう!
  - ゲーム実装
 
 ## Screen Shot  
-![Title](https://github.com/lambda1/SCP/blob/feature-readme/readme_picture/start.png)
+![Title](https://github.com/lambda1/SCP/blob/master/readme_picture/start.png)  
+![Game1](https://github.com/lambda1/SCP/blob/master/readme_picture/game1.png)  
+![Game2](https://github.com/lambda1/SCP/blob/master/readme_picture/game2.png)  
+![Game3](https://github.com/lambda1/SCP/blob/master/readme_picture/game3.png)  
+![Game4](https://github.com/lambda1/SCP/blob/master/readme_picture/game4.png)  
 
 ## Demo
 
