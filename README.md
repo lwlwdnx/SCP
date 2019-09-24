@@ -29,8 +29,6 @@ BirdMenに襲われないように, ゴールを目指そう!
 ![Game3](https://github.com/lambda1/SCP/blob/master/readme_picture/game3.png)  
 ![Game4](https://github.com/lambda1/SCP/blob/master/readme_picture/game4.png)  
 
-## Demo
-
 ## Development Environment  
 OS: Windows 10, mac OS  
 エンジン: Unity 2017.4.24f1 Personal  
